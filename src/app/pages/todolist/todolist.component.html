@@ -1,1 +1,66 @@
-<p>todolist works!</p>
+<article>
+    <section class="markdown">
+        <div nz-row>
+            <div nz-col nzSpan="8">
+                <nz-card nzTitle="New Task" class="add-task">
+                    <form nz-form  nzLayout="vertical">
+
+                        <!-- Task Field -->
+                        <nz-form-item>
+                          <nz-form-label nzFor="task" nzRequired>Task</nz-form-label>
+                          <nz-form-control>
+                            <input nz-input nzSize="large" nzname="task" type="text" id="task" placeholder="What needs to be done?">
+                          </nz-form-control>
+                        </nz-form-item >
+
+                        <!-- Due Date Field -->
+                        <nz-form-item>
+                            <nz-form-label nzFor="dueDate" nzRequired>Due Date</nz-form-label>
+                            <nz-form-control >
+                              <nz-date-picker nzSize="large" class="due-date-input" nzPlaceHolder="When is the due date?"></nz-date-picker>
+                            </nz-form-control>
+                        </nz-form-item>
+
+                        <!-- Submit Button -->
+                        <nz-form-item>
+                            <nz-form-control >
+                              <button nz-button nzType="primary">Submit</button>
+                            </nz-form-control>
+                        </nz-form-item>
+
+                    </form>
+                </nz-card>
+            </div>
+            <div  nz-col nzSpan="16">
+                <nz-card nzTitle="Task Available" class="task-list">
+                    <!-- Task list table -->
+                    <nz-table
+                    class="task-tbl"
+                    #rowSelectionTable
+                    nzShowPagination
+                    nzShowSizeChanger
+                    nzBordered="true"
+                    nzSize="small">
+                    <thead>
+                      <tr>
+                        <th ></th>
+                        <th>Task</th>
+                        <th>Due Date</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let data of rowSelectionTable.data">
+                        <td
+                        ></td>
+                        <td>test</td>
+                        <td>test</td>
+                        <td>test</td>
+                      </tr>
+                    </tbody>
+                  </nz-table>
+                </nz-card>
+            </div>
+        </div>
+    </section>
+</article>
